@@ -1,15 +1,15 @@
 # Dual-Branch Neural-Network-Based Loop Filter (NNLF)
 
-## 1. 项目简介
-本项目在 VTM-10.0 中新增了一种**双分支神经网络环路滤波器（Dual-Branch NNLF）**。  
-- 训练阶段得到 PyTorch 模型 `.pth`  
-- 通过 `torch.jit.trace` 编译为 TorchScript `.pt`，供 C++ 推理  
-- 推理依赖 **LibTorch**（≥1.9，CPU 或 CUDA 均可）  
-- 代码已集成到 `VVCSoftware_VTM/source/Lib/CommonLib`，可随 VTM 一起编译
+## 1. Project Overiview
+In this project,  we propose a neural network-based in-loop filter (NNLF) for VVC intra coding based on dual-branch collaborative architecture.  
+- The PyTorch model .pth is obtained during the training stage.  
+- It is compiled into a TorchScript .pt file using torch.jit.trace for C++ inference.  
+- The inference depends on LibTorch (version ≥ 1.9, compatible with both CPU and CUDA).  
+- The code is integrated into VVCSoftware_VTM/source/Lib/CommonLib to be compiled together with VTM.
 
 ---
 
-## 2. 文件清单
+## 2. Document List
 ```
 Dual-Branch-NNLF/
 ├── README.md
@@ -28,22 +28,22 @@ Dual-Branch-NNLF/
 
 ---
 
-## 3. 快速开始
+## 3. Quick Start Guide
 
-### 3.1 环境准备
+### 3.1 Environment Setup
 - Python ≥ 3.8  
 - PyTorch ≥ 1.9  
 - LibTorch（与 PyTorch 版本保持一致）  
 - VTM-10.0 源码树已下载并可正常编译
 
-### 3.2 生成 TorchScript 模型
+### 3.2 Export a TorchScript (.pt) model
 ```bash
 python model_transfer.py
 ```
 脚本默认会把 `G_epoch_65.pth` 转成 `filter_UV.pt`，并保存在 `./pt/AI/`。  
 如需生成 Y 分量模型，请取消脚本中相应注释。
 
-### 3.3 集成到 VTM
+### 3.3 Integration into VTM
 1. 把 `CnnLoopFilter.h` / `CnnLoopFilter.cpp` 复制到  
    `~/VVCSoftware_VTM/source/Lib/CommonLib/`
 2. 在 `CommonLib/CMakeLists.txt` 末尾追加：
@@ -63,7 +63,7 @@ make -j$(nproc)
 
 ---
 
-## 4. 接口说明（C++）
+## 4. Interface Description（C++）
 ```cpp
 // CnnLoopFilter.h
 class CnnLoopFilter
@@ -85,7 +85,7 @@ private:
 
 ---
 
-## 5. 模型细节
+## 5. Model Description
 | 分量 | 输入维度 | 输出维度 | 模型大小 |
 |------|-----------|-----------|-----------|
 | Y    | (1, 4, H, W)  | (1, 1, H, W)  | ~7 MB（未启用） |
@@ -95,7 +95,7 @@ private:
 
 ---
 
-## 6. 性能数据（示例）
+## 6. Performance Metrics (Example)
 - 测试序列：BasketballDrive_1920x1080_50  
 - 平台：Intel i9-10900K @ 3.7 GHz，单线程  
 - 滤波耗时：≈ 4.3 ms / frame（UV 联合滤波）  
@@ -103,7 +103,7 @@ private:
 
 ---
 
-## 7. 常见问题
+## 7. Frequently Asked Questions (FAQ)
 **Q1. 加载模型失败？**  
 → 确认 LibTorch 版本与生成 `.pt` 时 PyTorch 版本一致；路径正确。
 
@@ -115,7 +115,7 @@ private:
 
 ---
 
-## 8. 更新日志
+## 8. Changelog
 | 日期 | 内容 |
 |------|------|
 | 2025-10-21 | 第一版，支持 UV 双通道滤波 |
@@ -123,12 +123,11 @@ private:
 
 ---
 
-## 9. 作者 / 单位
+## 9. Contributor / Organization
 Xidian Media Lab  
-
 
 ---
 
-## 10. 许可证
+## 10. Reference
 同 VTM 采用 **BSD-3-Clause**。使用请引用：  
 > “Dual-Branch Neural Network Loop Filter in VTM-10.0,” Xidian Media Lab, 2025.
