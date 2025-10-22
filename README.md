@@ -134,4 +134,4 @@ Xidian Media Lab
 
 ## 10. Reference
 同 VTM 采用 **BSD-3-Clause**。使用请引用：  
-> “Dual-Branch Neural Network Loop Filter in VTM-10.0,” Xidian Media Lab, 2025.
+> Liu et al., "Neural Network-Based In-Loop Filter Based on Dual-Branch Collaborative Architecture," 2025 (Under Review)
