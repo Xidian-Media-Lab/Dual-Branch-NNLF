@@ -1,5 +1,9 @@
 # Dual-Branch Neural-Network-Based Loop Filter (NNLF)
 
+<img width="960" height="413" alt="VISUAL" src="https://github.com/user-attachments/assets/0fe3d4b5-e41d-4c19-8b2a-4ba60983ee69" />
+
+(a) Uncompressed frames. (b) VTM-11.0 NNVC-3.0 anchor. (c) Proposed NNLF. Top: BlowingBubbles. Bottom: BQSquare. We obtain the results at QP 42 under the AI configuration.
+
 ## 1. Project Overiview
 In this project,  we propose a neural network-based in-loop filter (NNLF) for VVC intra coding based on dual-branch collaborative architecture.  
 - The PyTorch model .pth is obtained during the training stage.  
