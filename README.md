@@ -37,8 +37,8 @@ Dual-Branch-NNLF/
 ### 3.1 Environment Setup
 - Python ≥ 3.8  
 - PyTorch ≥ 1.9  
-- LibTorch（与 PyTorch 版本保持一致）  
-- VTM-10.0 源码树已下载并可正常编译
+- LibTorch（Consistent with the PyTorch version）  
+- VTM-11.0_nnvc (VTM-11.0 + JVET-V0056 patch) 
 
 ### 3.2 Export a TorchScript (.pt) model
 ```bash
