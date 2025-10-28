@@ -17,17 +17,17 @@ In this project,  we propose a neural network-based in-loop filter (NNLF) for VV
 ```
 Dual-Branch-NNLF/
 ├── README.md
-├── model_transfer.py          # 把 .pth 转成 .pt
+├── model_transfer.py          # Convert .pth into .pt
 ├── checkpoint/
 │   └── AI/
 │       └── REAM/
-│           └── G_epoch_65.pth # 第三阶段训练得到的生成器权重
+│           └── G_epoch_65.pth # Parameters obtained from the third stage training
 ├── pt/
 │   ├── AI/
-│   │   ├── filter_Y.pt        # Y 分量模型（已注释掉，备用）
-│   │   └── filter_UV.pt       # UV 分量模型（当前启用）
-├── CnnLoopFilter.h            # 公用接口头文件
-└── CnnLoopFilter.cpp          # LibTorch 推理实现
+│   │   ├── filter_Y.pt        # Y component model
+│   │   └── filter_UV.pt       # UV component model
+├── CnnLoopFilter.h            # NNLF header
+└── CnnLoopFilter.cpp          # NNLF source
 ```
 
 ---
