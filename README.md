@@ -132,6 +132,15 @@ Xidian Media Lab
 
 ---
 
-## 10. Reference
-同 VTM 采用 **BSD-3-Clause**。使用请引用：  
-> Jung et al., "Neural Network-Based In-Loop Filter Based on Dual-Branch Collaborative Architecture," 2025 (Under Review)
+## 10. Citation  
+```bash
+@article{jung2026neural,
+  title={Neural Network-Based In-Loop Filter Based on Dual-Branch Collaborative Architecture},
+  author={Jung, Cheolkon and Liu, Xu and Wu, Shaochong and Han, Jiang},
+  journal={Engineering Applications of Artificial Intelligence},
+  volume = {165, part a},
+  pages = {113350},
+  year = {2026},
+  publisher={Elsevier}
+}
+
